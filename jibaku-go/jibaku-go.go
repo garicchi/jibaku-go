@@ -1,4 +1,4 @@
-package jibaku
+package jibaku_go
 
 import (
 	"os"
@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 var unitSec = 1.0
-var unitCount = 5
+var unitCount = 3
 var layout = "2006-01-02 15:04:05"
 var env_count = "JIBAKU_COUNT"
 var env_time = "JIBAKU_TIME"

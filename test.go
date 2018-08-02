@@ -1,11 +1,11 @@
 package main
 
 import (
-	"./jibaku"
+	"./jibaku-go"
 )
 
 func main(){
 	for i:=0;i<7;i++ {
-		jibaku.Check()
+		jibaku_go.Check()
 	}
 }
