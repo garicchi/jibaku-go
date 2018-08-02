@@ -9,9 +9,11 @@ A bot destroyer for golang
 go get "github.com/garicchi/jibaku-go/jibaku"
 ```
 
+1秒間に10回発話したら自爆
+
 ```
 import "github.com/garicchi/jibaku-go/jibaku"
 
 // before post from your bot
-jibaku.Check()
+jibaku.Check(1.0,10)
 ```

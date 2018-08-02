@@ -5,7 +5,7 @@ import (
 )
 
 func main(){
-	for i:=0;i<7;i++ {
-		jibaku.Check()
+	for i:=0;i<100;i++ {
+		jibaku.Check(1.0,10)
 	}
 }

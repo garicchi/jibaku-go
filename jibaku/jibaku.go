@@ -7,14 +7,11 @@ import (
 	"fmt"
 )
 
-
-var unitSec = 1.0
-var unitCount = 3
 var layout = "2006-01-02 15:04:05"
 var env_count = "JIBAKU_COUNT"
 var env_time = "JIBAKU_TIME"
 
-func Check(){
+func Check(unitSec float64,unitCount int){
 
 	_c := os.Getenv(env_count)
 	_t := os.Getenv(env_time)
@@ -28,19 +25,24 @@ func Check(){
 		t ,_ = time.Parse(layout,_t)
 	}
 
+	c++;
+
+	if time.Now().Sub(t).Seconds()>unitSec {
+		os.Setenv(env_time,time.Now().Format(layout))
+		os.Setenv(env_count,"0")
+		c = 0
+	}else{
+		s := strconv.Itoa(c)
+		os.Setenv(env_count,s)
+	}
+
 	if c > unitCount{
 		fmt.Println("単位時間に規定回数以上投稿しようとしたので自爆します")
 		os.Setenv(env_count,"0")
 		os.Exit(1)
 	}
 
-	c++;
 
-	if time.Now().Sub(t).Seconds()>unitSec {
-		os.Setenv(env_time,time.Now().Format(layout))
-		os.Setenv(env_count,"0")
-	}else{
-		s := strconv.Itoa(c)
-		os.Setenv(env_count,s)
-	}
+
+
 }
