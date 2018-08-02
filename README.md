@@ -15,5 +15,5 @@ go get "github.com/garicchi/jibaku-go/jibaku"
 import "github.com/garicchi/jibaku-go/jibaku"
 
 // before post from your bot
-jibaku.Check(1.0,10)
+jibaku.Check(time.Second,10)
 ```

@@ -11,7 +11,7 @@ var layout = "2006-01-02 15:04:05"
 var env_count = "JIBAKU_COUNT"
 var env_time = "JIBAKU_TIME"
 
-func Check(unitSec float64,unitCount int){
+func Check(unitSec time.Duration,unitCount int){
 
 	_c := os.Getenv(env_count)
 	_t := os.Getenv(env_time)
@@ -27,7 +27,9 @@ func Check(unitSec float64,unitCount int){
 
 	c++;
 
-	if time.Now().Sub(t).Seconds()>unitSec {
+	fmt.Println(c)
+
+	if time.Now().After(t.Add(unitSec)) {
 		os.Setenv(env_time,time.Now().Format(layout))
 		os.Setenv(env_count,"0")
 		c = 0

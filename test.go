@@ -2,10 +2,12 @@ package main
 
 import (
 	"./jibaku"
+	"time"
 )
 
 func main(){
-	for i:=0;i<100;i++ {
-		jibaku.Check(1.0,10)
+	for i:=0;i<2;i++ {
+		jibaku.Check(time.Second,10)
+		time.Sleep(100)
 	}
 }
