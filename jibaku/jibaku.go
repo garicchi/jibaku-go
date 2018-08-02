@@ -1,11 +1,13 @@
-package main
+package jibaku
 
 import (
 	"os"
-	"strconv"
 	"time"
+	"strconv"
 	"fmt"
 )
+
+
 var unitSec = 1.0
 var unitCount = 3
 var layout = "2006-01-02 15:04:05"
