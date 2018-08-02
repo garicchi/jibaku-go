@@ -1,4 +1,4 @@
-package jibaku_go
+package main
 
 import (
 	"os"
