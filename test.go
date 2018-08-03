@@ -6,8 +6,10 @@ import (
 )
 
 func main(){
-	for i:=0;i<2;i++ {
+	for i:=0;i<100;i++ {
 		jibaku.Check(time.Second,10)
-		time.Sleep(100)
+		if i%15==0 {
+			time.Sleep(time.Second)
+		}
 	}
 }
